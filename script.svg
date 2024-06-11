@@ -1,8 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
    <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
    <script>
-      if(window.opener){
-         window.opener.openLink("https://baidu.com")
+      if (window.top === window.self) { // 检查当前iframe是否就是顶级窗口  
+         console.log("top window");
+          window.location.href = "https://baidu.com";  
+      } else {  
+          // 如果不是顶级窗口，尝试在父窗口中打开新链接  
+          // 注意：这可能会受到浏览器安全策略的限制  
+         console.log("child window");
+          window.parent.location.href = "https://baidu.com";  
       }
    </script>
 </svg>

